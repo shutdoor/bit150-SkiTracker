@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.Controller">
+   <children>
+      <ImageView fx:id="ImageBox" fitHeight="428.0" fitWidth="695.0" layoutX="465.0" layoutY="316.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../photos/2015-16-Utah-Resorts-Map_1300w.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="Login" layoutX="31.0" layoutY="343.0" prefHeight="374.0" prefWidth="382.0" style="-fx-background-color: #000;">
+         <children>
+            <TextField fx:id="Username" layoutX="65.0" layoutY="81.0" promptText="Username" style="-fx-background-color: #fff;" />
+            <PasswordField fx:id="Password" layoutX="65.0" layoutY="137.0" promptText="Password" />
+            <Label fx:id="UserLoginText" layoutX="10.0" layoutY="7.0" text="User Login" textFill="WHITE">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
+            <Button fx:id="SubmitButton" layoutX="78.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubmitButtonClick" onMouseClicked="#SubmitButtonClick" prefHeight="46.0" prefWidth="105.0" text="Submit" textAlignment="CENTER" />
+            <Pane fx:id="SubMenuPane" layoutY="-56.0" prefHeight="460.0" prefWidth="1159.0" style="-fx-background-color: #cab;" visible="false" />
+            <Button fx:id="newUserLink" layoutX="54.0" layoutY="288.0" mnemonicParsing="false" onAction="#createAccount" onMouseClicked="#SubmitButtonClick" text="I dont have an account" />
+         </children>
+      </Pane>
+      <HBox fx:id="Title" layoutX="324.0" layoutY="24.0" prefHeight="128.0" prefWidth="532.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utah Skiing">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Button fx:id="WeatherButton" layoutX="344.0" layoutY="200.0" mnemonicParsing="false" onAction="#weatherBtnClick" prefHeight="99.0" prefWidth="162.0" text="Weather" />
+      <Button fx:id="SortButton" layoutX="634.0" layoutY="200.0" mnemonicParsing="false" onAction="#sortBtnClick" prefHeight="99.0" prefWidth="162.0" text="Sort" />
+      <Button fx:id="UtahAttractionsButton" layoutX="921.0" layoutY="193.0" mnemonicParsing="false" onAction="#attractionsBtnClick" prefHeight="99.0" prefWidth="162.0" text="Utah Attractions" />
+      <Pane fx:id="OtherInfo" layoutY="745.0" prefHeight="149.0" prefWidth="1200.0">
+         <children>
+            <TextArea layoutX="707.0" layoutY="11.0" prefHeight="128.0" prefWidth="146.0" text="Categories:&#10;Resorts&#10;Weather&#10;Sort&#10;Utah Attractions" />
+            <Label fx:id="ContactUS" layoutX="880.0" layoutY="42.0" prefHeight="21.0" prefWidth="105.0" text="Contact Us:" />
+         </children>
+      </Pane>
+      <MenuButton fx:id="ResortButton" layoutX="88.0" layoutY="200.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Resorts" textAlignment="CENTER">
+         <items>
+            <MenuItem fx:id="none" mnemonicParsing="false" text="None" />
+            <MenuItem fx:id="Snowbird" mnemonicParsing="false" onAction="#resortPage" text="Snowbird" />
+            <MenuItem fx:id="Alta" mnemonicParsing="false" onAction="#resortPage" text="Alta" />
+            <MenuItem fx:id="deerValley" mnemonicParsing="false" onAction="#resortPage" text="Deer Valley" />
+            <MenuItem fx:id="Solitude" mnemonicParsing="false" onAction="#resortPage" text="Solitude" />
+            <MenuItem fx:id="Brighton" mnemonicParsing="false" onAction="#resortPage" text="Brighton Ski Resort" />
+            <MenuItem fx:id="parkCity" mnemonicParsing="false" onAction="#resortPage" text="Park City Ski Resort" />
+            <MenuItem fx:id="cherryPark" mnemonicParsing="false" onAction="#resortPage" text="Cherry Park" />
+         </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

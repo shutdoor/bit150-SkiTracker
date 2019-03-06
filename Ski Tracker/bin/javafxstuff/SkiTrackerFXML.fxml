@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.RegistrationFormController">
+   <children>
+      <Pane fx:id="ImageBox" layoutX="473.0" layoutY="335.0" prefHeight="374.0" prefWidth="697.0" style="-fx-background-color: #000;" />
+      <Pane fx:id="Login" layoutX="31.0" layoutY="343.0" prefHeight="374.0" prefWidth="382.0" style="-fx-background-color: #000; -fx-border-radius: 0,0,18,18; -fx-background-size: 380,375;">
+         <children>
+            <TextField fx:id="Username" layoutX="65.0" layoutY="81.0" promptText="Username" />
+            <PasswordField fx:id="Password" layoutX="65.0" layoutY="137.0" promptText="Password" />
+            <Label fx:id="UserLoginText" layoutX="10.0" layoutY="7.0" text="User Login" textFill="WHITE">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
+            <Button fx:id="SubmitButton" layoutX="78.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#SubmitButtonClick" prefHeight="46.0" prefWidth="105.0" text="Submit" textAlignment="CENTER" />
+            <Pane fx:id="SubMenuPane" layoutY="-56.0" prefHeight="460.0" prefWidth="1159.0" style="-fx-background-color: #cab;" visible="false" />
+            <Hyperlink fx:id="newUserLink" layoutX="102.0" layoutY="289.0" text="Create New User" underline="true" />
+         </children>
+      </Pane>
+      <HBox fx:id="Title" layoutX="324.0" layoutY="24.0" prefHeight="128.0" prefWidth="532.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utah Skiing">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Button fx:id="WeatherButton" layoutX="344.0" layoutY="200.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Weather" />
+      <Button fx:id="ResortButton" layoutX="60.0" layoutY="200.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Resorts" textAlignment="CENTER" />
+      <Button fx:id="SortButton" layoutX="634.0" layoutY="200.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Sort" />
+      <Button fx:id="UtahAttractionsButton" layoutX="921.0" layoutY="193.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Utah Attractions" />
+      <Pane fx:id="OtherInfo" layoutY="745.0" prefHeight="149.0" prefWidth="1200.0">
+         <children>
+            <TextArea layoutX="707.0" layoutY="11.0" prefHeight="128.0" prefWidth="146.0" text="Categories:&#10;Resorts&#10;Weather&#10;Sort&#10;Utah Attractions" />
+            <Label fx:id="ContactUS" layoutX="880.0" layoutY="42.0" prefHeight="21.0" prefWidth="105.0" text="Contact Us:" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

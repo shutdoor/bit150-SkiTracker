@@ -4,15 +4,11 @@ import models.User;
 
 public class AppController {
 
-	public static void run() {
+	public static void main() {
 		
 	}
 	
-	private static User createNewUser() {
-		return null;
-		
-	}
-	private static void login() {
+	public static void start() {
 		
 	}
 }
