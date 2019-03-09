@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.AtrtractionsView">
+   <children>
+      <HBox fx:id="Title" layoutX="262.0" layoutY="14.0" prefHeight="128.0" prefWidth="532.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utah Attractions">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Button fx:id="WeatherButton" layoutX="340.0" layoutY="157.0" mnemonicParsing="false" onAction="#weatherBtnClick" prefHeight="99.0" prefWidth="162.0" text="Weather" />
+      <Button fx:id="SortButton" layoutX="630.0" layoutY="157.0" mnemonicParsing="false" onAction="#sortBtnClick" prefHeight="99.0" prefWidth="162.0" text="Sort" />
+      <Button fx:id="UtahAttractionsButton" layoutX="917.0" layoutY="150.0" mnemonicParsing="false" onAction="#attractionsBtnClick" prefHeight="99.0" prefWidth="162.0" text="Utah Attractions" />
+      <Pane fx:id="OtherInfo" layoutY="745.0" prefHeight="149.0" prefWidth="1200.0" />
+      <MenuButton fx:id="ResortButton" layoutX="84.0" layoutY="157.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Resorts" textAlignment="CENTER">
+         <items>
+            <MenuItem fx:id="none" mnemonicParsing="false" text="None" />
+            <MenuItem fx:id="Snowbird" mnemonicParsing="false" onAction="#resortPage" text="Snowbird" />
+            <MenuItem fx:id="Alta" mnemonicParsing="false" onAction="#resortPage" text="Alta" />
+            <MenuItem fx:id="deerValley" mnemonicParsing="false" onAction="#resortPage" text="Deer Valley" />
+            <MenuItem fx:id="Solitude" mnemonicParsing="false" onAction="#resortPage" text="Solitude" />
+            <MenuItem fx:id="Brighton" mnemonicParsing="false" onAction="#resortPage" text="Brighton Ski Resort" />
+            <MenuItem fx:id="parkCity" mnemonicParsing="false" onAction="#resortPage" text="Park City Ski Resort" />
+            <MenuItem fx:id="cherryPark" mnemonicParsing="false" onAction="#resortPage" text="Cherry Park" />
+         </items>
+      </MenuButton>
+      <Pane layoutX="340.0" layoutY="270.0" prefHeight="639.0" prefWidth="852.0" />
+      <Button fx:id="foodAndDrink" layoutX="41.0" layoutY="373.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="205.0" text="Food &amp; Drink" />
+      <Button fx:id="entertainment" layoutX="41.0" layoutY="455.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="205.0" text="Entertainment" />
+      <Button fx:id="travel" layoutX="41.0" layoutY="541.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="205.0" text="Travel" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToMain" prefHeight="69.0" prefWidth="71.0">
+         <graphic>
+            <ImageView fx:id="backButtonImage" fitHeight="150.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../photos/arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
