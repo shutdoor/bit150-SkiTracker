@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.AtrtractionsView">
+   <children>
+      <HBox fx:id="Title" layoutX="262.0" layoutY="14.0" prefHeight="128.0" prefWidth="532.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Utah Attractions">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Button fx:id="WeatherButton" layoutX="340.0" layoutY="157.0" mnemonicParsing="false" onAction="#weatherBtnClick" prefHeight="99.0" prefWidth="162.0" text="Weather" />
+      <Button fx:id="SortButton" layoutX="630.0" layoutY="157.0" mnemonicParsing="false" onAction="#sortBtnClick" prefHeight="99.0" prefWidth="162.0" text="Sort" />
+      <Button fx:id="UtahAttractionsButton" layoutX="917.0" layoutY="150.0" mnemonicParsing="false" onAction="#attractionsBtnClick" prefHeight="99.0" prefWidth="162.0" text="Utah Attractions" />
+      <Pane fx:id="OtherInfo" layoutY="745.0" prefHeight="149.0" prefWidth="1200.0" />
+      <MenuButton fx:id="ResortButton" layoutX="84.0" layoutY="157.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Resorts" textAlignment="CENTER">
+         <items>
+            <MenuItem fx:id="none" mnemonicParsing="false" text="None" />
+            <MenuItem fx:id="Snowbird" mnemonicParsing="false" onAction="#resortPage" text="Snowbird" />
+            <MenuItem fx:id="Alta" mnemonicParsing="false" onAction="#resortPage" text="Alta" />
+            <MenuItem fx:id="deerValley" mnemonicParsing="false" onAction="#resortPage" text="Deer Valley" />
+            <MenuItem fx:id="Solitude" mnemonicParsing="false" onAction="#resortPage" text="Solitude" />
+            <MenuItem fx:id="Brighton" mnemonicParsing="false" onAction="#resortPage" text="Brighton Ski Resort" />
+            <MenuItem fx:id="parkCity" mnemonicParsing="false" onAction="#resortPage" text="Park City Ski Resort" />
+            <MenuItem fx:id="cherryPark" mnemonicParsing="false" onAction="#resortPage" text="Cherry Park" />
+         </items>
+      </MenuButton>
+      <Button fx:id="foodAndDrink" layoutX="41.0" layoutY="373.0" mnemonicParsing="false" onAction="#foodBTNclick" prefHeight="66.0" prefWidth="205.0" text="Food &amp; Drink" />
+      <Button fx:id="entertainmentBTN" layoutX="41.0" layoutY="455.0" mnemonicParsing="false" onAction="#entertainmentBTNclick" prefHeight="66.0" prefWidth="205.0" text="Entertainment" />
+      <Button fx:id="travel" layoutX="41.0" layoutY="541.0" mnemonicParsing="false" onAction="#TravelBTNclick" prefHeight="66.0" prefWidth="205.0" text="Travel" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToMain" prefHeight="69.0" prefWidth="71.0">
+         <graphic>
+            <ImageView fx:id="backButtonImage" fitHeight="150.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../photos/arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <GridPane fx:id="Transportation" layoutX="338.0" layoutY="357.0" prefHeight="445.0" prefWidth="704.0" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="265.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="126.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="163.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="134.0" prefWidth="294.0" text="Transportation" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Price" GridPane.columnIndex="1" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Travel Time" GridPane.columnIndex="3" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="schedule" GridPane.columnIndex="2" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Bus" GridPane.rowIndex="1" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Trax" GridPane.rowIndex="2" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Uber/Lift" GridPane.rowIndex="3" />
+            <Label prefHeight="134.0" prefWidth="294.0" text="Airport" GridPane.rowIndex="4" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="N/A" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="every 15 min" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="every 15 min" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="On demand" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="2.50 Per day " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="2.50 Per day " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label prefHeight="76.0" prefWidth="125.0" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="food" layoutX="430.0" layoutY="398.0" prefHeight="377.0" prefWidth="639.0" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="223.0" prefWidth="461.0" text="Food&amp;Drink" />
+            <Label prefHeight="223.0" prefWidth="461.0" GridPane.rowIndex="1" />
+            <Label prefHeight="223.0" prefWidth="461.0" text="distance" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="entertainment" layoutX="430.0" layoutY="373.0" prefHeight="498.0" prefWidth="666.0" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="202.0" prefWidth="407.0" text="Entertainment" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

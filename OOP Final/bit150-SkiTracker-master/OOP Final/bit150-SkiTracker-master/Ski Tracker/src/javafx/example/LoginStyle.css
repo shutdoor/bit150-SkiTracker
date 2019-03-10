@@ -1,0 +1,46 @@
+#MainPage{
+    -fx-height: 100%;
+    -fx-background-color: linear-gradient(darkslateblue, lightblue);
+}
+Pane{
+    -fx-border-radius: 3px;
+    -fx-background-color: rgb(65, 65, 65); 
+}
+.inputBoxes{
+    -fx-border-radius: 3px;
+    -fx-color: rgb(65,65,65);
+}
+#textfield{
+    -fx-font-size: 14px;
+    -fx-text-transform: capitalize;
+    -fx-color: white;
+}
+Label{
+	-fx-border-radius: 3px;
+}
+menuitem{
+    -fx-font-size: 14px;
+    -fx-text-transform: capitalize;
+    -fx-text-align: left;
+    -fx-color: rgb(65, 65, 65);
+    
+}
+Text{
+    -fx-font-size: 36px;
+    -fx-text-transform: capitalize;
+    -fx-color: white;
+    -fx-background: red;
+    -fx-width: 300px;
+    -fx-height: 500px;
+    -fx-text-align: center;
+    -fx-font-size: 25px;
+}
+children{
+	-fx-background-color: rgb(65,65,65);
+}
+
+
+
+
+
+
