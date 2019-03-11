@@ -23,8 +23,25 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class DashboardController {
-   
+   private static String uname4Login;
+   private static String pass4Login;
 	
+	public static String getUname4Login() {
+	return uname4Login;
+}
+
+public static void setUname4Login(String uname4Login) {
+	DashboardController.uname4Login = uname4Login;
+}
+
+public static String getPass4Login() {
+	return pass4Login;
+}
+
+public static void setPass4Login(String pass4Login) {
+	DashboardController.pass4Login = pass4Login;
+}
+
 	@FXML
 	private Pane SubMenuPane;
 
@@ -76,7 +93,7 @@ public class DashboardController {
 	private Pane OtherInfo;
 
 	@FXML
-	public static TextField Username;
+	public   TextField Username;
 
 	@FXML
 	private MenuItem parkCity;
@@ -97,7 +114,7 @@ public class DashboardController {
 	private AnchorPane MainPage;
 
 	@FXML
-	public static PasswordField Password;
+	public  PasswordField Password;
 	
 	 @FXML
 	    private Button AcctBTN;
@@ -110,6 +127,7 @@ public class DashboardController {
 
 	@FXML
 	void createAccount(ActionEvent event) {
+		// switches to the create user page
 		Parent login = null;
 		try {
 
@@ -119,9 +137,6 @@ public class DashboardController {
 			System.out.println("login  failed");
 			e.printStackTrace();
 		}
-
-		// Here I want to swap the screen!
-
 		Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 		primaryStage.setScene(new Scene(login));
@@ -129,10 +144,17 @@ public class DashboardController {
 
 	@FXML
 	void SubmitButtonClick(ActionEvent event) {
-		
+		setUname4Login(Username.getText());
+		setPass4Login(Password.getText());
 		Username.clear();
 		Password.clear();
-		System.out.println("Login success");
+		if (GUIController.users.containsKey(uname4Login) && GUIController.users.get(uname4Login).getPassword().equals(getPass4Login())) {
+			
+			System.out.println("Login success"); //login works but throws error in runtime for whatever reason
+			currentUser.setText("Currently logged in as:" + getUname4Login());
+		} else {
+			System.out.println("login failure");
+		}
 		
 	}
 
@@ -178,9 +200,7 @@ public class DashboardController {
 		primaryStage.setScene(new Scene(attractions));
 	}
 
-	private static void resort() {
-		
-	}
+	
 	@FXML
 	void resortPage(ActionEvent event) {
 		

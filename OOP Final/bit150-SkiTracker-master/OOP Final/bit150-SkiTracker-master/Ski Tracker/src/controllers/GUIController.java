@@ -12,7 +12,7 @@ import javafx.example.CreateUserController;
 import models.User;
 
 public class GUIController implements Serializable {
-	private static HashMap<String, User> users = new HashMap<>();
+	public static HashMap<String, User> users = new HashMap<>();
 
 	public static  User createNewUser() {
 		
@@ -46,32 +46,34 @@ public class GUIController implements Serializable {
 		} while (errorFound);
 		return user;
 	}
-
-	public static User login(String username, String password) {
-		loadMap();
-		boolean errorFound = false;
-		do {
-			
-		User user = new User(javafx.example.DashboardController.Username.getText(), javafx.example.DashboardController.Password.getText());
-		if (users.containsKey(user.getUsername())) {
-			if (users.containsValue(user.getPassword())) {
-				errorFound = false;
-				// Allow access to user page and display saved results from previous login
-				return user;
-
-			} else {
-				errorFound = true;
-				return null;
-				// Wrong password error/prompt for username again
-			}
-		} else {
-			errorFound = true;
-			// Wrong username error/prompt to login again or create account
-			return null;
-		}
-		// Return user and bring user to new page with user content
-		}while(errorFound);
-	}
+/* username cant be static 
+ * gotta find out what is calling the method below
+ */
+//	public static User login(String username, String password) {
+//		loadMap();
+//		boolean errorFound = false;
+//		do {
+//			
+////		User user = new User(javafx.example.DashboardController.Username.getText(), javafx.example.DashboardController.Password.getText());
+//		if (users.containsKey(user.getUsername())) {
+//			if (users.containsValue(user.getPassword())) {
+//				errorFound = false;
+//				// Allow access to user page and display saved results from previous login
+//				return user;
+//
+//			} else {
+//				errorFound = true;
+//				return null;
+//				// Wrong password error/prompt for username again
+//			}
+//		} else {
+//			errorFound = true;
+//			// Wrong username error/prompt to login again or create account
+//			return null;
+//		}
+//		// Return user and bring user to new page with user content
+//		}while(errorFound);
+//	}
 
 	private static void saveMap() {
 //		boolean isBorked = false; // in case do while
