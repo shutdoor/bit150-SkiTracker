@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.ResortsPageController">
+   <children>
+      <Pane fx:id="ImageBox" layoutX="756.0" layoutY="335.0" prefHeight="374.0" prefWidth="414.0" style="-fx-background-color: #000;" />
+      <Pane fx:id="OtherInfo" layoutY="745.0" prefHeight="149.0" prefWidth="1200.0">
+         <children>
+            <Label fx:id="ContactUS" layoutX="880.0" layoutY="42.0" prefHeight="21.0" prefWidth="105.0" text="Contact Us:" />
+         </children>
+      </Pane>
+      <HBox fx:id="Title" layoutX="163.0" layoutY="30.0" prefHeight="141.0" prefWidth="848.0">
+         <children>
+            <Label fx:id="resortName" prefHeight="141.0" prefWidth="956.0" text="[Resort Name Here]" wrapText="true">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Pane fx:id="weatherInfo" layoutX="57.0" layoutY="285.0" prefHeight="500.0" prefWidth="530.0" style="-fx-background-color: #000;">
+         <children>
+            <Label layoutX="29.0" layoutY="40.0" prefHeight="31.0" prefWidth="288.0" text="Current Temp:" textFill="WHITE" />
+            <Label layoutX="29.0" layoutY="129.0" prefHeight="31.0" prefWidth="288.0" text="Todays High:" textFill="WHITE" />
+            <Label layoutX="29.0" layoutY="219.0" prefHeight="31.0" prefWidth="288.0" text="Todays Low:" textFill="WHITE" />
+            <Label layoutX="29.0" layoutY="317.0" prefHeight="31.0" prefWidth="288.0" text="Snow Quality:" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Button fx:id="backButton" layoutX="1.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="69.0" prefWidth="71.0">
+         <graphic>
+            <ImageView fx:id="backButtonImage" fitHeight="150.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../photos/arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <MenuButton fx:id="ResortButton" layoutX="73.0" layoutY="159.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="162.0" text="Resorts" textAlignment="CENTER">
+         <items>
+            <MenuItem fx:id="none" mnemonicParsing="false" text="None" />
+            <MenuItem fx:id="Snowbird" mnemonicParsing="false" onAction="#resortPage" text="Snowbird" />
+            <MenuItem fx:id="Alta" mnemonicParsing="false" onAction="#resortPage" text="Alta" />
+            <MenuItem fx:id="deerValley" mnemonicParsing="false" onAction="#resortPage" text="Deer Valley" />
+            <MenuItem fx:id="Solitude" mnemonicParsing="false" onAction="#resortPage" text="Solitude" />
+            <MenuItem fx:id="Brighton" mnemonicParsing="false" onAction="#resortPage" text="Brighton Ski Resort" />
+            <MenuItem fx:id="parkCity" mnemonicParsing="false" onAction="#resortPage" text="Park City Ski Resort" />
+            <MenuItem fx:id="cherryPark" mnemonicParsing="false" onAction="#resortPage" text="Cherry Park" />
+         </items>
+      </MenuButton>
+      <Button fx:id="UtahAttractionsButton" layoutX="906.0" layoutY="152.0" mnemonicParsing="false" onAction="#attractionsBtnClick" prefHeight="99.0" prefWidth="162.0" text="Utah Attractions" />
+      <Button fx:id="SortButton" layoutX="619.0" layoutY="159.0" mnemonicParsing="false" onAction="#sortBtnClick" prefHeight="99.0" prefWidth="162.0" text="Sort" />
+      <Button fx:id="WeatherButton" layoutX="329.0" layoutY="159.0" mnemonicParsing="false" onAction="#weatherBtnClick" prefHeight="99.0" prefWidth="162.0" text="Weather" />
+   </children>
+</AnchorPane>
