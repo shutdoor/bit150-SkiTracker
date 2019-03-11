@@ -1,0 +1,83 @@
+#MainPage{
+    -fx-height: 100%;
+    -fx-background-color: linear-gradient(rgb(65, 83, 117), rgb(188, 211, 233));
+    -fx-background-image: url("photos\Mountains.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center bottom;
+}
+#Login{
+    -fx-height: 300px;
+    -fx-width: 200px;
+    -fx-background-color: rgb(85, 84, 84);
+    -fx-border-radius: 5px;
+    -fx-border-style: double;
+    -fx-border-color: white;
+    -fx-font-size: 14px;
+    -fx-text-fill: whitesmoke;
+    -fx-text-alignment: center;
+}
+#UserLoginText{
+    -fx-font-size: 40px;
+    -fx-text-alignment: center;
+}
+#UserName{
+    -fx-border-radius: 2px;
+    -fx-background-color: #fff;
+}
+#Password{
+    -fx-border-radius: 2px;
+}
+#SubmitButton{
+    -fx-text-alignment: center;
+}
+#ImageBox{
+    -fx-opacity: .85;
+}
+#bottomText{
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: none;
+}
+#Title{
+    -fx-text-alignment: center;
+    -fx-font-size: 96px;
+    -fx-text-fill: rgb(255, 255, 255);
+
+}
+#WeatherButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 3px;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#SortButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#UtahAttractionsButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#ResortButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
