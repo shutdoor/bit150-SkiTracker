@@ -49,14 +49,7 @@ public class DashboardController {
 	@FXML
 	private HBox Title;
 	
-	  @FXML
-	    private GridPane entertainment;
-
-	    @FXML
-	    private GridPane Transportation;
-	    
-	    @FXML
-	    private GridPane food;
+	 
 
 	@FXML
 	private Pane Login;
@@ -83,7 +76,7 @@ public class DashboardController {
 	private Pane OtherInfo;
 
 	@FXML
-	public static TextField Username;
+	public   TextField Username;
 
 	@FXML
 	private MenuItem parkCity;
@@ -104,7 +97,7 @@ public class DashboardController {
 	private AnchorPane MainPage;
 
 	@FXML
-	public static PasswordField Password;
+	public  PasswordField Password;
 	
 	 @FXML
 	    private Button AcctBTN;
@@ -136,12 +129,14 @@ public class DashboardController {
 
 	@FXML
 	void SubmitButtonClick(ActionEvent event) {
-		String uname = Username.getText();
-		String pass = Username.getText();
+		
 		Username.clear();
 		Password.clear();
-		System.out.println("Login success");
-		GUIController.login();
+		if (GUIController.users.containsKey(Username.getText())) {
+			
+			System.out.println("Login success");
+		}
+		
 	}
 
 	@FXML
@@ -186,6 +181,7 @@ public class DashboardController {
 		primaryStage.setScene(new Scene(attractions));
 	}
 
+	
 	@FXML
 	void resortPage(ActionEvent event) {
 		
@@ -213,20 +209,53 @@ public class DashboardController {
 currentUser.setVisible(true);
 	    }
 	  
+	  @FXML
+	    void SnowBird(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void Alta(ActionEvent event) {
+	    	Parent resort = null;
+			try {
+
+				resort = FXMLLoader.load(getClass().getResource("resortView.fxml"));
+
+			} catch (IOException e) {
+				System.out.println("resort  failed");
+				e.printStackTrace();
+			}
+
+			// Here I want to swap the screen!
+
+			Stage primaryStage = (Stage) ResortButton.getScene().getWindow();
+			
+			primaryStage.setScene(new Scene(resort));
+			
+	    }
+
+	    @FXML
+	    void deer_valley(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void Solitude(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void Brighton(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void parkCity(ActionEvent event) {
+
+	    }
+
 	  
-	    @FXML
-	    void foodBTNclick(ActionEvent event) {
-food.setVisible(true);
-	    }
-
-	    @FXML
-	    void entertainmentBTNclick(ActionEvent event) {
-entertainment.setVisible(true);
-	    }
-
-	    @FXML
-	    void TravelBTNclick(ActionEvent event) {
-
-	    }
+	  
+	   
 
 }

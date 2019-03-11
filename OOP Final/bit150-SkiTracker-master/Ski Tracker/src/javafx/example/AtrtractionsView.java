@@ -13,6 +13,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -27,7 +28,7 @@ public class AtrtractionsView {
     private MenuItem Solitude;
 
     @FXML
-    private Button entertainment;
+    private Button entertainmentBTN;
 
     @FXML
     private MenuItem Alta;
@@ -80,7 +81,14 @@ public class AtrtractionsView {
     @FXML
     private AnchorPane MainPage;
 
+    @FXML
+    private GridPane entertainment;
 
+    @FXML
+    private GridPane Transportation;
+    
+    @FXML
+    private GridPane food;
 
     @FXML
     void backToMain(ActionEvent event) {
@@ -166,6 +174,32 @@ public class AtrtractionsView {
 			primaryStage.setScene(new Scene(resort));
 
 		}
+	    
+	    @FXML
+	    void foodBTNclick(ActionEvent event) {
+	    	entertainment.setVisible(false);
+	    	Transportation.setVisible(false);
+food.setVisible(true);
+	    }
+	    
+	    
+
+	    @FXML
+	    void entertainmentBTNclick(ActionEvent event) {
+
+	    	Transportation.setVisible(false);
+food.setVisible(false);
+entertainment.setVisible(true);
+	    }
+
+	    @FXML
+	    void TravelBTNclick(ActionEvent event) {
+	    	
+
+	    	entertainment.setVisible(false);
+food.setVisible(false);
+Transportation.setVisible(true);
+	    }
 
 	   
 

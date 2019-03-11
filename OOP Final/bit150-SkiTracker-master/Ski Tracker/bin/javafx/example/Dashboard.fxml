@@ -61,7 +61,7 @@
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Ski%20Tracker/GUI/src/photos/userACCTimg.jpg" />
+                  <Image url="@../../photos/userACCTimg.jpg" />
                </image>
             </ImageView>
          </graphic>

@@ -5,71 +5,78 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 
-
+import javafx.example.CreateUserController;
 import models.User;
 
-public class GUIController {
-	private static HashMap<String, User> users = new HashMap<>();
+public class GUIController implements Serializable {
+	public static HashMap<String, User> users = new HashMap<>();
 
-	public static User createNewUser() {
+	public static  User createNewUser() {
+		
+		String confirmPassword = null;
 		boolean errorFound = false;
-		String confirmPassword = javafx.example.CreateUserController.confirmPass.getText();
+	User user = null;
 		do {
 
-			User user = new User(javafx.example.CreateUserController.firstName.getText(), javafx.example.CreateUserController.lastName.getText(),
-					javafx.example.CreateUserController.password.getText(), javafx.example.CreateUserController.username.getText(),
-					javafx.example.CreateUserController.email.getText(0, javafx.example.CreateUserController.email.getLength())); // different because of testing
+			 user = new User(CreateUserController.getUname(), "pass"); // different because of testing
 			if (users.containsKey(user.getUsername())) {
 				// UsernameAlreadyExists
+				System.out.println("user exists");
 				errorFound = true;
 			}
 			if (users.containsValue(user.getEmail())) {
 				// UserAlreadyExists
+				System.out.println("that email is already in");
 				errorFound = true;
 			}
-			if (user.getPassword() == confirmPassword) {
-				users.put(user.getUsername(), user);
-				saveMap();
-				errorFound = false;
-				// puts user into hashmap and saves hashmap
-				return user;
-			} else {
+//			if (user.getPassword().equals(confirmPassword)) {
+//				users.put(user.getUsername(), user);
+//				saveMap();
+//				errorFound = false;
+//				// puts user into hashmap and saves hashmap
+//				return user;
+//			} 
+			else {
 				return null;
 				
 			}
 		} while (errorFound);
+		return user;
 	}
-
-	public static User login() {
-		loadMap();
-		boolean errorFound = false;
-		do {
-			
-		User user = new User(javafx.example.DashboardController.Username.getText(), javafx.example.DashboardController.Password.getText());
-		if (users.containsKey(user.getUsername())) {
-			if (users.containsValue(user.getPassword())) {
-				errorFound = false;
-				// Allow access to user page and display saved results from previous login
-				return user;
-
-			} else {
-				errorFound = true;
-				return null;
-				// Wrong password error/prompt for username again
-			}
-		} else {
-			errorFound = true;
-			// Wrong username error/prompt to login again or create account
-			return null;
-		}
-		// Return user and bring user to new page with user content
-		}while(errorFound);
-	}
+/* username cant be static 
+ * gotta find out what is calling the method below
+ */
+//	public static User login(String username, String password) {
+//		loadMap();
+//		boolean errorFound = false;
+//		do {
+//			
+////		User user = new User(javafx.example.DashboardController.Username.getText(), javafx.example.DashboardController.Password.getText());
+//		if (users.containsKey(user.getUsername())) {
+//			if (users.containsValue(user.getPassword())) {
+//				errorFound = false;
+//				// Allow access to user page and display saved results from previous login
+//				return user;
+//
+//			} else {
+//				errorFound = true;
+//				return null;
+//				// Wrong password error/prompt for username again
+//			}
+//		} else {
+//			errorFound = true;
+//			// Wrong username error/prompt to login again or create account
+//			return null;
+//		}
+//		// Return user and bring user to new page with user content
+//		}while(errorFound);
+//	}
 
 	private static void saveMap() {
-//		boolean isBorked = false;
+//		boolean isBorked = false; // in case do while
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try {

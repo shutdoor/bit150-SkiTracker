@@ -9,7 +9,16 @@
 
 <AnchorPane fx:id="MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.example.CreateUserController">
    <children>
-      <Pane fx:id="inputBoxes" layoutX="175.0" layoutY="50.0" prefHeight="813.0" prefWidth="516.0" style="-fx-background-color: #000;">
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToMain" prefHeight="69.0" prefWidth="71.0">
+   <graphic>
+      <ImageView fx:id="backButtonImage" fitHeight="150.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../photos/arrow.png" />
+         </image>
+      </ImageView>
+   </graphic>
+</Button>
+      <Pane fx:id="inputBoxes" layoutX="359.0" layoutY="113.0" prefHeight="813.0" prefWidth="516.0" style="-fx-background-color: #000;">
          <children>
             <TextField fx:id="firstName" layoutX="226.0" layoutY="36.0" promptText="FirstName" />
             <TextField fx:id="lastName" layoutX="226.0" layoutY="119.0" promptText="Lastname" />
@@ -17,8 +26,8 @@
             <TextField fx:id="email" layoutX="226.0" layoutY="258.0" promptText="Email" />
             <TextField fx:id="password" layoutX="226.0" layoutY="336.0" promptText="Password" />
             <TextField fx:id="confirmPass" layoutX="226.0" layoutY="415.0" promptText="ConfirmPassword" />
-            <Button fx:id="createNewAccountBTN" layoutX="126.0" layoutY="583.0" mnemonicParsing="false" onAction="#newAcctCreate" prefHeight="47.0" prefWidth="201.0" text="Create New Account" />
-            <Pane fx:id="Pane2" layoutX="33.0" layoutY="653.0" prefHeight="138.0" prefWidth="402.0">
+            <Button fx:id="createNewAccountBTN" layoutX="126.0" layoutY="583.0" mnemonicParsing="false" onAction="#getInput" prefHeight="47.0" prefWidth="201.0" text="Create New Account" />
+            <Pane fx:id="errors" layoutX="33.0" layoutY="607.0" prefHeight="184.0" prefWidth="402.0">
                <children>
                   <Text fx:id="userAlreadyExists" fill="RED" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username is taken" visible="false" wrappingWidth="332.0">
                      <font>
@@ -58,14 +67,5 @@
             </MenuButton>
          </children>
       </Pane>
-      <Button fx:id="backButton" layoutX="1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="89.0" prefWidth="87.0">
-         <graphic>
-            <ImageView fx:id="backButtonImage" fitHeight="150.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../photos/arrow.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
    </children>
 </AnchorPane>
