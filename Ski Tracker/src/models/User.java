@@ -1,64 +1,79 @@
 package models;
 
+import javafx.example.CreateUserController;
 import javafx.scene.control.TextField;
 
 public class User {
-	private TextField fName;
-	private TextField lName;
-	private TextField username;
-	private TextField email;
-	private TextField password;
+	
+	
+private String username;
+private String password;
+private String fname;
+private String lname;
+private String email;
 
-	public User(TextField fName, TextField lName, TextField password, TextField username, TextField email) {
-		this.setfName(fName);
-		this.setlName(lName);
-		this.setPassword(password);
-		this.setUsername(username);
-		this.setEmail(username);
-	}
-	public User(TextField username, TextField password) {
+
+	
+	public User(String username, String password, String fname, String lname, String email) {
+	this.username = username;
+	this.password = password;
+	this.fname = fname;
+	this.lname = lname;
+	this.email = email;
+}
+
+	public User(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
 
-	public TextField getfName() {
-		return fName;
+	public String getfName() {
+		return fname;
 	}
 
-	public void setfName(TextField fName) {
-		this.fName = fName;
+	public void setfName(String string) {
+		this.fname = string;
 	}
 
-	public TextField getlName() {
-		return lName;
+	public String getlName() {
+		return lname;
 	}
 
-	public void setlName(TextField lName) {
-		this.lName = lName;
+	public void setlName(String string) {
+		this.lname = string;
 	}
 
-	public TextField getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(TextField password) {
-		this.password = password;
+	public void setPassword(String string) {
+		this.password = string;
 	}
 
-	public TextField getUsername() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(TextField username) {
-		this.username = username;
+	public void setUsername(String string) {
+		this.username = string;
 	}
 
-	public TextField getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(TextField email) {
-		this.email = email;
+	public void setEmail(String string) {
+		this.email = string;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User: ").append(fname).append(" ").append(lname).append(", username=")
+				.append(username).append(", email=").append(email).append(", password=").append(password).append("]");
+		return builder.toString();
+	}
+	
+	
 
 }
