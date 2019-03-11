@@ -1,0 +1,64 @@
+#MainPage{
+    -fx-height: 100%;
+    -fx-background-color: linear-gradient(rgb(65, 83, 117), rgb(188, 211, 233));
+    -fx-background-image: url("photos\mountains.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center bottom;
+}
+#WeatherButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 3px;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#SortButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#UtahAttractionsButton{
+    -fx-background-color: rgb(240, 240, 240);
+    -fx-text-fill: rgb(85, 84, 84);
+    -fx-font-size: 15px;
+    -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-border-style: double;
+    -fx-border-color: rgb(85, 84, 84);
+}
+#backButton{
+    -fx-background-color: none;
+    -fx-color: rgb(85, 84, 84);
+}
+#weatherInfo{
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-background-color: rgb(85, 84, 84);
+    -fx-border-radius: 5px;
+    -fx-border-style: double;
+    -fx-border-color: white;
+
+}
+#resortName{
+    -fx-font-size: 80px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+
+
+
+
+
+
+
+
+
+
+

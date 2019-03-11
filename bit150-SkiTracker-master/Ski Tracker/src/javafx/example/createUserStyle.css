@@ -1,0 +1,60 @@
+#MainPage{
+    -fx-height: 100%;
+    -fx-background-color: linear-gradient(rgb(65, 83, 117), rgb(188, 211, 233));
+    -fx-background-image: url("photos\Mountains.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center bottom;
+}
+#inputBoxes{
+    -fx-background-color: rgb(85, 84, 84);
+    -fx-border-radius: 5px;
+    -fx-border-style: double;
+    -fx-border-color: white;
+}
+Label{
+    -fx-font-size: 16px;
+}
+#firstName{
+    -fx-font-size: 16px;
+}
+#lastName{
+    -fx-font-size: 16px;
+}
+#username{
+    -fx-font-size: 16px;
+}
+#email{
+    -fx-font-size: 16px;
+}
+#password{
+    -fx-font-size: 16px;
+}
+#confirmPass{
+    -fx-font-size: 16px;
+}
+#createNewAccountBTN{
+    -fx-font-size: 18px;
+}
+#Pane2{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+}
+#backButton{
+    -fx-background-color: none;
+    -fx-color: rgb(85, 84, 84);
+}
+#AccountPrompt{
+    -fx-background-color: none;
+    -fx-text-alignment: center;
+    -fx-font-size: 23px;
+    -fx-wrap-text: true;
+    -fx-text-fill: rgb(85, 84, 84);
+}
+#Title{
+    -fx-background-color: none;
+    -fx-font-size: 65px;
+    -fx-text-fill: white;
+    -fx-font-weight: 650;
+}
+
