@@ -199,6 +199,7 @@ public class CreateUserController {
 		//check for duplicate email
 		if (controllers.GUIController.users.keySet().contains(getEmailAdress())) {
 			System.out.println("email adress is in use already");
+			emailTaken.setVisible(true);
 		// i would like to have a dialoge pop up that says would you like to continue if we have time
 		} 
 		//check for matching passwords
@@ -228,8 +229,7 @@ public class CreateUserController {
 		}
 		
 		
-//		String passw = password.getText();
-//		System.out.println(un);
+
 		
 	}
 
