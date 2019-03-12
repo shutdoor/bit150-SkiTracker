@@ -1,0 +1,124 @@
+package models;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import Apis.WeatherUnlocked;
+
+public class Weather {
+	private Random rng = new Random();
+	private int Temp = -99;
+	private int TempMin = -99;
+	private int TempMax = -99;
+	private int Humidity = -99;
+	private int SnowQuality = -99;
+	private ArrayList<WeatherUnlocked> weatherNew = new ArrayList<WeatherUnlocked>();
+
+	public Weather(int index) {
+		initilizeAPI(index);
+		setTemp(simulateTemp());
+		int temp = getTemp();
+		setTempMin(simulateTempMin());
+		setTempMax(simulateTempMax());
+		setHumidity(weatherNew.get(0).getHumidity());
+		// System.out.println("--" + getTemp());
+		setSnowQuality(initSnowQuality(temp));
+		if (getSnowQuality() == -99) {
+			System.out.println("Error Temp: " + temp);
+
+		}
+	}
+
+	private int initSnowQuality(int temp) {
+		int snowQuality;
+		if (temp <= 30 && temp >= 20) {
+			snowQuality = rng.nextInt(10 - 8 + 1) + 8;
+			return snowQuality;
+		} else if (temp < 21 && temp > 15 || temp < 40 && temp > 30) {
+			snowQuality = rng.nextInt(7 - 5 + 1) + 5;
+			return snowQuality;
+		} else if (temp < 16 && temp > 9 || temp < 60 && temp > 39) {
+			snowQuality = rng.nextInt(4 - 2 + 1) + 2;
+			return snowQuality;
+		} else if (temp < 10 && temp > 0 || temp < 100 && temp > 59) {
+			snowQuality = rng.nextInt(1 - 0 + 1) + 0;
+			return snowQuality;
+		}
+		return -99;
+	}
+
+	private void initilizeAPI(int index) {
+		String[] longLad = { "40.5811,-111.6603", "40.5883,-111.6358", "40.6374,-111.4783", "40.6199,-111.5919",
+				"40.5980,-111.5832", "40.6514,-111.5080", "41.9263,-111.7564" };
+		weatherNew.add(new WeatherUnlocked(longLad[index]));
+
+	}
+
+	private int simulateTemp() {
+		int max = 14;
+		int min = 3;
+		int tempatureSubAmmount = rng.nextInt(max - min + 1) + min;
+		int temp = weatherNew.get(0).getTemperatureF() - tempatureSubAmmount;
+		return temp;
+	}
+
+	private int simulateTempMin() {
+		int min = 0;
+		int max = 12;
+
+		int tempatureSubAmmount = rng.nextInt(max - min + 1) + min;
+		int tempMin = weatherNew.get(0).getTemperatureF() - tempatureSubAmmount;
+		return tempMin;
+	}
+
+	private int simulateTempMax() {
+		int min = 0;
+		int max = 12;
+
+		int tempatureSubAmmount = rng.nextInt(max - min + 1) + min;
+		int tempMax = weatherNew.get(0).getTemperatureF() + tempatureSubAmmount;
+		return tempMax;
+
+	}
+
+	public int getTemp() {
+		return Temp;
+	}
+
+	public void setTemp(int temp) {
+		Temp = temp;
+	}
+
+	public int getTempMax() {
+		return TempMax;
+	}
+
+	public void setTempMax(int tempMax) {
+		TempMax = tempMax;
+	}
+
+	public int getTempMin() {
+		return TempMin;
+	}
+
+	public void setTempMin(int tempMin) {
+		TempMin = tempMin;
+	}
+
+	public int getHumidity() {
+		return Humidity;
+	}
+
+	public void setHumidity(int humidity) {
+		Humidity = humidity;
+	}
+
+	public int getSnowQuality() {
+		return SnowQuality;
+	}
+
+	public void setSnowQuality(int snowQuality) {
+		SnowQuality = snowQuality;
+	}
+
+}
